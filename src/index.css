@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "NetflixSans", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@font-face {
+  font-family: "NetflixSans";
+  src: local("NetflixSans"), url("./fonts/netflix-sans.woff2") format("woff2"),
+    url("./fonts/netflix-sans.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-primary: #e50914;
+  --color-secondary: #141414;
+  /* Accent Color */
+  --color-third: #0071EB;
+  --color-fourth: #FFA00A;
+  --color-fifth: #5FA53F;
+
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: bold;
+  line-height: 70;
+  letter-spacing: -0.5%;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 55px;
+  letter-spacing: -1%;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: auto;
+  letter-spacing: 0%;
+}
