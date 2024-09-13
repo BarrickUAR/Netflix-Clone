@@ -19,7 +19,7 @@ function Header() {
     <nav>
       <div className="nav-header">
         <a href="#">
-          <img src="/public/assets/images/Logo.svg" alt="" />
+          <img src="  /assets/images/Logo.svg" alt="" />
         </a>
 
         <div className="language-menu">
@@ -64,7 +64,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="/public/assets/images/sectionImg1.svg" alt="" />
+          <img src="  /assets/images/sectionImg1.svg"  />
         </div>
       </div>
 
@@ -74,7 +74,7 @@ function HeroSection() {
           <p>Save your favorites easily and always have something to watch..</p>
         </div>
         <div className="sectionImage">
-          <img src="/public/assets/images/sectionImg2.svg" alt="" />
+          <img src="  /assets/images/sectionImg2.svg"  />
         </div>
       </div>
 
@@ -87,7 +87,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="/public/assets/images/sectionImg3.svg" alt="" />
+          <img src="  /assets/images/sectionImg3.svg"  />
         </div>
       </div>
 
@@ -100,7 +100,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="/public/assets/images/sectionImg4.svg" alt="" />
+          <img src="  /assets/images/sectionImg4.svg"  />
         </div>
       </div>
     </div>
