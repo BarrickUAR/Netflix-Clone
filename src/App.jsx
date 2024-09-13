@@ -18,7 +18,9 @@ function Header() {
   return (
     <nav>
       <div className="nav-header">
-        <img src="/public/assets/images/Logo.svg" alt="" />
+        <a href="#">
+          <img src="/public/assets/images/Logo.svg" alt="" />
+        </a>
 
         <div className="language-menu">
           <div className="select-wrapper">
@@ -31,7 +33,7 @@ function Header() {
           </div>
         </div>
 
-        <button>Sign Up</button>
+        <button>Sign In</button>
       </div>
       <div className="nav-content">
         <h2>
@@ -218,7 +220,81 @@ function Faqs() {
 function Footer() {
   return (
     <footer>
-      <h2>Footer</h2>
+      <div className="footer__row__1">
+        <h4>Questions? Call 000-800-040-1843</h4>
+      </div>
+      <div className="footer__row__2">
+        <div className="column__1">
+          <a href="/faq">
+            <p>FAQ</p>
+          </a>
+          <a href="/investor-relations">
+            <p>Investor Relations</p>
+          </a>
+          <a href="/privacy">
+            <p>Privacy</p>
+          </a>
+          <a href="/speed-test">
+            <p>Speed Test</p>
+          </a>
+        </div>
+        <div className="column__2">
+          <a href="/help-centre">
+            <p>Help Centre</p>
+          </a>
+          <a href="/jobs">
+            <p>Jobs</p>
+          </a>
+          <a href="/cookie-preferences">
+            <p>Cookie Preferences</p>
+          </a>
+          <a href="/legal-notices">
+            <p>Legal Notices</p>
+          </a>
+        </div>
+        <div className="column__3">
+          <a href="/account">
+            <p>Account</p>
+          </a>
+          <a href="/ways-to-watch">
+            <p>Ways to Watch</p>
+          </a>
+          <a href="/corporate-information">
+            <p>Corporate Information</p>
+          </a>
+          <a href="/only-on-netflix">
+            <p>Only on Netflix</p>
+          </a>
+        </div>
+        <div className="column__4">
+          <a href="/media-centre">
+            <p>Media Centre</p>
+          </a>
+          <a href="/terms-of-use">
+            <p>Terms of Use</p>
+          </a>
+          <a href="/contact-us">
+            <p>Contact Us</p>
+          </a>
+        </div>
+      </div>
+
+      <div className="footer__row__3">
+        <div className="dropdown__container">
+          <i className="fas fa-globe"></i>
+          <div className="language-menu">
+            <div className="select-wrapper">
+              <select className="select">
+                <option selected="">English</option>
+                <option value="-">-</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className="footer__row__4">
+          <p>Netflix India</p>
+        </div>
+      </div>
     </footer>
   );
 }
