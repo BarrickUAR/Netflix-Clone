@@ -1,39 +1,61 @@
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  useNavigate,
+} from "react-router-dom";
+
 import { useState } from "react";
 import "./App.css";
+import "./SignUp.css";
 
 function App() {
   return (
-    <>
+    <Router>
       <div className="container">
-        <Header />
-        <HeroSection />
-        <Faqs />
-        <Footer />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/SignIn" element={<Login />} />
+        </Routes>
       </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <Header />
+      <HeroSection />
+      <Faqs />
+      <Footer />
     </>
   );
 }
 
 function Header() {
+  const navigate = useNavigate();
+
   return (
     <nav>
       <div className="nav-header">
         <a href="#">
-          <img src="  /assets/images/Logo.svg" alt="" />
+          <img src="/assets/images/Logo.svg" alt="" />
         </a>
 
         <div className="language-menu">
           <div className="select-wrapper">
             <div className="select-arrow globe">
               <select className="select">
-                <option selected="">English</option>
+                <option value="en">English</option>
                 <option value="-">-</option>
               </select>
             </div>
           </div>
         </div>
 
-        <button>Sign In</button>
+        <button onClick={() => navigate("/SignIn")}>Sign In</button>
       </div>
       <div className="nav-content">
         <h2>
@@ -64,7 +86,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg1.svg"  />
+          <img src="  /assets/images/sectionImg1.svg" />
         </div>
       </div>
 
@@ -74,7 +96,7 @@ function HeroSection() {
           <p>Save your favorites easily and always have something to watch..</p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg2.svg"  />
+          <img src="  /assets/images/sectionImg2.svg" />
         </div>
       </div>
 
@@ -87,7 +109,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg3.svg"  />
+          <img src="  /assets/images/sectionImg3.svg" />
         </div>
       </div>
 
@@ -100,7 +122,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg4.svg"  />
+          <img src="  /assets/images/sectionImg4.svg" />
         </div>
       </div>
     </div>
@@ -296,6 +318,95 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function LoginFooter() {
+  return (
+    <div className="loginFooterContainer">
+      <div className="footer__row__1">
+        <h4>Questions? Call 000-800-040-1843</h4>
+      </div>
+      <div className="footer__row__2">
+        <div className="column__1">
+          <a href="/faq">
+            <p>FAQ</p>
+          </a>
+          <a href="/investor-relations">
+            <p>Cookie Preferences</p>
+          </a>
+        </div>
+
+        <div className="column__2">
+          <a href="/help-centre">
+            <p>Help Centre</p>
+          </a>
+          <a href="/jobs">
+            <p>Corporate Information</p>
+          </a>
+        </div>
+
+        <div className="column__3">
+          <a href="/account">
+            <p>Terms of Use</p>
+          </a>
+        </div>
+
+        <div className="column__4">
+          <a href="/media-centre">
+            <p>Privacy</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Login() {
+  return (
+    <div className="loginContainer">
+      <div className="signIn">
+        <h1>Sign In</h1>
+        <form>
+          <input type="email" placeholder="Email or phone number" required />
+          <input type="password" placeholder="Password" required />
+          <button className="SignInButton">Sign In</button>
+        </form>
+
+        <div className="rememberMe">
+          <div className="remember">
+            <a href="">Remember me</a>
+          </div>
+          <div className="needHelp">
+            <a href="#">Need help?</a>
+          </div>
+        </div>
+
+        <div className="otherSignInOptions">
+          <div className="facebook">
+            <i className="fab fa-facebook-square"></i>
+            <a href="">
+              <img src="/public/assets/images/facebook.svg" alt="" />{" "}
+              <p>Login with Facebook</p>
+            </a>
+          </div>
+
+          <div className="newToNetflix">
+            <p>
+              New to Netflix? <a href="#">Sign up now</a>
+            </p>
+          </div>
+
+          <div className="reCaptcha">
+            <p>
+              This page is protected by Google reCAPTCHA to ensure you're not a
+              bot. <a href="#">Learn more.</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <LoginFooter />
+    </div>
   );
 }
 

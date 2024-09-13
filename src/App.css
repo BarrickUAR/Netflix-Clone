@@ -436,13 +436,18 @@ footer {
   flex-direction: column;
   gap: 20px;
 
-a {
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+  }
 
   p {
     color: #757575;
     margin-bottom: 15px;
+  }
+
+  h4 {
+    color: #757575;
+    margin-left: 25px;
   }
 }
 
@@ -467,3 +472,4 @@ a {
 }
 
 /* Footer End */
+
