@@ -384,9 +384,9 @@ function Login() {
 
         <div className="otherSignInOptions">
           <div className="facebook">
-            <i className="fab fa-facebook-square"></i>
+            <i className="fab"></i>
             <a href="">
-              <img src="/public/assets/images/facebook.svg" alt="" />{" "}
+              <img src="/assets/images/facebook.svg" alt="" />{" "}
               <p>Login with Facebook</p>
             </a>
           </div>
