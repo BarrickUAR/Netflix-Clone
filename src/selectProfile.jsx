@@ -9,7 +9,7 @@ const ProfileSelection = () => {
 
       <div className="profileContainer">
         <div className="profileSelection">
-            
+
           <h1>Kim İzliyor ?</h1>
 
           <div className="profile-Items">
@@ -43,7 +43,7 @@ const ProfileSelection = () => {
 
             <div className="addProfile">
               <img
-                src="/public/assets/images/addProfile.svg"
+                src="/assets/images/addProfile.svg"
                 alt="addProfile"
               />
               <p>Profil Ekle</p>
