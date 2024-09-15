@@ -424,7 +424,9 @@ function Login({ setIsLoggedIn }) {
               bot. <a href="#">Learn more.</a>
             </p>
           </div>
+
         </div>
+        
       </div>
       <LoginFooter />
     </div>
