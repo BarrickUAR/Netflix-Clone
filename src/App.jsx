@@ -1,22 +1,32 @@
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
-  Link,
   useNavigate,
+  Navigate,
 } from "react-router-dom";
-
 import { useState } from "react";
 import "./App.css";
 import "./SignUp.css";
+import SelectProfile from "./selectProfile";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <Router>
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/SignIn" element={<Login />} />
+          <Route
+            path="/SignIn"
+            element={<Login setIsLoggedIn={setIsLoggedIn} />}
+          />
+          <Route
+            path="/select-profile"
+            element={isLoggedIn ? <SelectProfile /> : <Navigate to="/SignIn" />}
+          />
         </Routes>
       </div>
     </Router>
@@ -41,7 +51,7 @@ function Header() {
     <nav>
       <div className="nav-header">
         <a href="#">
-          <img src="/assets/images/Logo.svg" alt="" />
+          <img src="/assets/images/Logo.svg" alt="Logo" />
         </a>
 
         <div className="language-menu">
@@ -86,17 +96,17 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg1.svg" />
+          <img src="/assets/images/sectionImg1.svg" alt="Enjoy on your TV" />
         </div>
       </div>
 
       <div className="sectionItem2">
         <div className="sectionText">
           <h2>Download your shows to watch offline.</h2>
-          <p>Save your favorites easily and always have something to watch..</p>
+          <p>Save your favorites easily and always have something to watch.</p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg2.svg" />
+          <img src="/assets/images/sectionImg2.svg" alt="Download your shows" />
         </div>
       </div>
 
@@ -109,7 +119,7 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg3.svg" />
+          <img src="/assets/images/sectionImg3.svg" alt="Watch everywhere" />
         </div>
       </div>
 
@@ -122,7 +132,10 @@ function HeroSection() {
           </p>
         </div>
         <div className="sectionImage">
-          <img src="  /assets/images/sectionImg4.svg" />
+          <img
+            src="/assets/images/sectionImg4.svg"
+            alt="Create profiles for kids"
+          />
         </div>
       </div>
     </div>
@@ -140,8 +153,8 @@ function Faqs() {
           <div className="content">
             <p>
               Netflix is a streaming service that offers a wide variety of
-              award-winning TV shows, movies, anime, documentaries and more - on
-              thousands of internet-connected devices.
+              award-winning TV shows, movies, anime, documentaries, and more -
+              on thousands of internet-connected devices.
               <br />
               <br />
               You can watch as much as you want, whenever you want, without a
@@ -307,7 +320,7 @@ function Footer() {
           <div className="language-menu">
             <div className="select-wrapper">
               <select className="select">
-                <option selected="">English</option>
+                <option selected>English</option>
                 <option value="-">-</option>
               </select>
             </div>
@@ -362,12 +375,20 @@ function LoginFooter() {
   );
 }
 
-function Login() {
+function Login({ setIsLoggedIn }) {
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setIsLoggedIn(true);
+    navigate("/select-profile");
+  };
+
+  const navigate = useNavigate();
+
   return (
     <div className="loginContainer">
       <div className="signIn">
         <h1>Sign In</h1>
-        <form>
+        <form onSubmit={handleLogin}>
           <input type="email" placeholder="Email or phone number" required />
           <input type="password" placeholder="Password" required />
           <button className="SignInButton">Sign In</button>
@@ -386,7 +407,7 @@ function Login() {
           <div className="facebook">
             <i className="fab"></i>
             <a href="">
-              <img src="/assets/images/facebook.svg" alt="" />{" "}
+              <img src="/assets/images/facebook.svg" alt="Facebook" />{" "}
               <p>Login with Facebook</p>
             </a>
           </div>
